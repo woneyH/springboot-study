@@ -3,6 +3,7 @@ package study.crud.springboot_study.repository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import study.crud.springboot_study.domain.Answer;
 import study.crud.springboot_study.domain.Question;
 
@@ -13,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
+@Transactional
 public class AnswerRepoTest {
     @Autowired
     private QuestionRepository questionRepository;
