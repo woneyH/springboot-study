@@ -18,6 +18,7 @@ public class QuestionController {
     public QuestionController(QuestionService questionService) {
         this.questionService = questionService;
     }
+
     //localhost:8080/question 들어갈 시 질문 목록 페이지
     @GetMapping({"","/"})
     public String home() {
@@ -34,8 +35,14 @@ public class QuestionController {
     //ID 값 PathVariable로 가져옴
     @GetMapping(value = "/detail/{id}")
     public String detailQuestionPage(Model model, @PathVariable Long id) {
-        QuestionResponse question = questionService.getQuestion(id);
+        QuestionResponse question = questionService.getQuestionDto(id);
         model.addAttribute("question",question);
         return "question_detail";
+    }
+
+    //todo 다음주 질문 생성에 대한 서비스, 컨트롤러, html 페이지 구현
+    @GetMapping("/create-question")
+    public String createQuestion() {
+        return "question_create";
     }
 }
