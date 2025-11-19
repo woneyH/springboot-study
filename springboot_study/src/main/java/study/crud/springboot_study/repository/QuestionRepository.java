@@ -10,6 +10,4 @@ public interface QuestionRepository extends JpaRepository<Question,Long> {
 
     //나중에 기능 확장을 위해 추가적인 연산 기능 where and
     Optional<Question> findBySubjectAndContent(String subject, String content);
-
-
 }
