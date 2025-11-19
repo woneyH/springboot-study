@@ -1,4 +1,4 @@
-package study.crud.springboot_study.exception;
+package study.crud.springboot_study.exception.question_exception;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
