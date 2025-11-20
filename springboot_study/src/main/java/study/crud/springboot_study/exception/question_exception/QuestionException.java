@@ -1,4 +1,4 @@
-package study.crud.springboot_study.exception;
+package study.crud.springboot_study.exception.question_exception;
 
 import org.springframework.http.HttpStatus;
 
