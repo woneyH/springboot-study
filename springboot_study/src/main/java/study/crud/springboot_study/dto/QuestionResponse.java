@@ -7,13 +7,14 @@ import java.util.List;
 
 /**
  * Question응답 DTO이다. question 엔티티에 반드시 필요한 맴버들이 존재
- * @param id question id
- * @param subject question title
- * @param content question content
+ *
+ * @param id         question id
+ * @param subject    question title
+ * @param content    question content
  * @param createDate question create date
  * @param answerList 자식 엔티티인 모든 answer 엔티티
  */
-public record QuestionResponse (
+public record QuestionResponse(
         Long id,
         String subject,
         String content,
@@ -26,7 +27,9 @@ public record QuestionResponse (
                 q.getSubject(),
                 q.getContent(),
                 q.getCreateDate(),
-                q.getAnswerList().stream().map(AnswerResponse::from).toList()
+                q.getAnswerList() != null
+                        ? q.getAnswerList().stream().map(AnswerResponse::from).toList()
+                        : List.of()
         );
     }
 }
